@@ -1,8 +1,14 @@
-export default function LoadingSpinner() {
-    return (
-        <div className="spinner-container">
-            <div className="loading-spinner"></div>
-            <p>Carregando...</p>
-        </div>
-    );
+// components/LoadingSpinner.tsx
+export function LoadingSpinner() {
+  return (
+    <div className="loading-spinner-overlay">
+      <div className="loading-spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <p className="loading-text">Carregando dados...</p>
+    </div>
+  );
 }

@@ -1,0 +1,249 @@
+/* Regra geral para todo o projeto */
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    /* Peso regular para textos normais */
+}
+
+/* Títulos */
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    /* Mais negrito para títulos */
+}
+
+/* Textos em destaque */
+.destaque {
+    font-weight: 200;
+}
+
+/* Botões */
+button {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    /* Melhora a legibilidade */
+}
+
+
+.error-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.cliente-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos para as seções */
+.cliente-header,
+.cliente-info-section,
+.contas-section,
+.agencia-section {
+    margin-bottom: 30px;
+}
+
+/* Estilos para grids e cards */
+.info-grid,
+.contas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+.info-item,
+.conta-card,
+.agencia-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.empty-message {
+    text-align: center;
+    color: #666;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* No seu global.css */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 1rem;
+    }
+}
+
+/* Estilos gerais para listagens */
+.contas-list-container,
+.agencias-list-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.search-container {
+    margin: 20px 0;
+}
+
+/* Grid de contas e agências */
+.contas-grid,
+.agencias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.conta-card,
+.agencia-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background: white;
+}
+
+.conta-card:hover,
+.agencia-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.conta-card h3,
+.agencia-card h3 {
+    color: #2c5282;
+    margin-bottom: 12px;
+}
+
+.conta-card p,
+.agencia-card p {
+    margin: 8px 0;
+    color: #4a5568;
+}
+
+.conta-card strong,
+.agencia-card strong {
+    color: #2d3748;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #718096;
+}
+
+.pagination-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+
+    .contas-list-container,
+    .agencias-list-container {
+        padding: 1rem;
+    }
+
+    .contas-grid,
+    .agencias-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estilos para as páginas de detalhe */
+.conta-detail-container,
+.agencia-detail-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.conta-header,
+.agencia-header {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 1rem;
+}
+
+.conta-id,
+.agencia-codigo {
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.info-item {
+    background: #f7fafc;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.info-label {
+    font-weight: 600;
+    color: #2d3748;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.info-value {
+    color: #4a5568;
+}
+
+.clientes-section {
+    margin-top: 3rem;
+}
+
+.clientes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.cliente-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+    transition: transform 0.2s;
+}
+
+.cliente-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+
+    .conta-detail-container,
+    .agencia-detail-container {
+        padding: 1rem;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,144 @@
+/* Estilos base (mobile first) */
+.bank-header {
+    background: linear-gradient(135deg, #003366 0%, #004080 100%);
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+    position: relative;
+}
+
+.bank-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.logo-image {
+    height: 30px;
+    width: auto;
+}
+
+/* Menu desktop (hidden on mobile) */
+.desktop-nav {
+    display: none;
+}
+
+.desktop-nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.desktop-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.desktop-nav a:hover {
+    color: #4da6ff;
+}
+
+/* Menu mobile */
+.mobile-menu-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: block;
+    z-index: 1001;
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100vh;
+    background: #003366;
+    padding: 5rem 2rem;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.mobile-nav.open {
+    left: 0;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.mobile-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-notifications {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .mobile-menu-button {
+        display: none;
+    }
+
+    .desktop-nav {
+        display: block;
+    }
+
+    .mobile-nav {
+        display: none;
+    }
+
+    .bank-logo {
+        font-size: 1.5rem;
+    }
+
+    .logo-image {
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        display: none;
+    }
+
+    .user-profile span {
+        display: none;
+    }
+}

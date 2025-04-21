@@ -2,10 +2,14 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { fetchClientes, fetchContas, fetchAgencias } from '../services/api';
 import { Cliente, Conta, Agencia } from '../types/data';
-import LoadingSpinner from '../components/LoadingSpinner';
+import {LoadingSpinner} from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
 
-// Funções auxiliares reutilizáveis
+// Importando estilos
+import '../styles/global.css';
+import '../styles/LoadingSpinner.css';
+
+// Funções auxiliares (mantidas exatamente como estavam)
 const cleanCpfCnpj = (str: string | undefined | null): string => {
     if (!str) return '';
     return str.replace(/\D/g, '');
@@ -80,13 +84,6 @@ export default function ClienteDetail() {
                     return;
                 }
 
-                // Debug logs
-                console.debug('Dados carregados:', {
-                    cliente: foundCliente,
-                    totalContas: contasData.length,
-                    totalAgencias: agenciasData.length
-                });
-
                 const clienteContas = contasData.filter(c => {
                     const clienteDoc = cleanCpfCnpj(foundCliente.cpfCnpj);
                     const contaDoc = cleanCpfCnpj(c.cpfCnpjCliente);
@@ -95,7 +92,6 @@ export default function ClienteDetail() {
 
                 setCliente({
                     ...foundCliente,
-                    // Garante que a data é um objeto Date válido
                     dataNascimento: new Date(foundCliente.dataNascimento)
                 });
                 setContas(clienteContas);
@@ -213,7 +209,7 @@ export default function ClienteDetail() {
     );
 }
 
-// Componentes auxiliares
+// Componentes auxiliares (mantidos exatamente como estavam)
 function InfoItem({ label, value }: { label: string; value: string }) {
     return (
         <div className="info-item">

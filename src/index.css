@@ -1,3 +1,8 @@
+@import './styles/BackButton.css';
+@import './styles/LoadingSpinner.css';
+@import './styles/ClienteListSkeleton.css';
+
+
 * {
   box-sizing: border-box;
   margin: 0;
