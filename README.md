@@ -1,54 +1,58 @@
-# React + TypeScript + Vite
+# 💳 Cliente Bancário
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web desenvolvida para um desafio técnico, com o objetivo de criar um sistema de gerenciamento de clientes bancários.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [CSS Modules](https://github.com/css-modules/css-modules) (ou o método de estilização que estiver usando)
+- [Google Sheets API via CSV](https://docs.google.com/spreadsheets/)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📋 Funcionalidades
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+✅ Visualização de todos os clientes cadastrados  
+✅ Filtro por nome e CPF/CNPJ  
+✅ Paginação (10 clientes por página)  
+✅ Visualização detalhada de um cliente  
+✅ Informações completas das contas bancárias do cliente  
+✅ Exibição da agência vinculada ao cliente  
+✅ Interface responsiva e acessível  
+✅ Carregamento rápido mesmo em dispositivos com recursos limitados  
+✅ Código limpo, organizado e 100% tipado com TypeScript
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🔗 Fonte de Dados
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+Os dados são carregados dinamicamente de uma planilha do Google Sheets, nos seguintes endpoints:
+
+- **Clientes:**  
+  [clientes.csv](https://docs.google.com/spreadsheets/d/1PBN_HQOi5ZpKDd63mouxttFvvCwtmY97Tb5if5_cdBA/gviz/tq?tqx=out:csv&sheet=clientes)
+
+- **Contas Bancárias:**  
+  [contas.csv](https://docs.google.com/spreadsheets/d/1PBN_HQOi5ZpKDd63mouxttFvvCwtmY97Tb5if5_cdBA/gviz/tq?tqx=out:csv&sheet=contas)
+
+- **Agências:**  
+  [agencias.csv](https://docs.google.com/spreadsheets/d/1PBN_HQOi5ZpKDd63mouxttFvvCwtmY97Tb5if5_cdBA/gviz/tq?tqx=out:csv&sheet=agencias)
+
+---
+
+## 🧑‍💻 Como Rodar o Projeto
+
+```bash
+# Clone o repositório
+git clone https://github.com/jordhanF/Cliente-Bancario.git
+
+# Acesse a pasta
+cd Cliente-Bancario
+
+# Instale as dependências
+npm install
+
+# Rode o projeto
+npm run dev
 ```

@@ -9,7 +9,7 @@ export default function Header() {
     <header className="bank-header">
       <div className="header-container">
         <Link to="/" className="bank-logo">
-  <i className="fas fa-university fa-2x"></i> {/* Ícone de banco */}
+  <i className="fas fa-university fa-2x"></i> 
   <span>Banco Digital</span>
 </Link>
         
@@ -48,7 +48,10 @@ export default function Header() {
             <span>Admin</span>
           </div>
         </div>
+
+        
       </div>
+      
     </header>
   );
 }

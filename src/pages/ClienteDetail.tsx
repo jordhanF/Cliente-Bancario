@@ -9,7 +9,7 @@ import ErrorMessage from '../components/ErrorMessage';
 import '../styles/global.css';
 import '../styles/LoadingSpinner.css';
 
-// Funções auxiliares (mantidas exatamente como estavam)
+// Funções auxiliares 
 const cleanCpfCnpj = (str: string | undefined | null): string => {
     if (!str) return '';
     return str.replace(/\D/g, '');
@@ -84,18 +84,32 @@ export default function ClienteDetail() {
                     return;
                 }
 
+               
                 const clienteContas = contasData.filter(c => {
-                    const clienteDoc = cleanCpfCnpj(foundCliente.cpfCnpj);
-                    const contaDoc = cleanCpfCnpj(c.cpfCnpjCliente);
-                    return contaDoc && clienteDoc && contaDoc === clienteDoc;
-                });
+                const clienteDoc = cleanCpfCnpj(foundCliente.cpfCnpj);
+                const contaDoc = cleanCpfCnpj(c.cpfCnpjCliente);
+
+                // Compara apenas os primeiros 11 (CPF) ou 14 (CNPJ) dígitos
+
+                const sliceLength = clienteDoc.length === 14 || contaDoc.length === 14 ? 14 : 11;
+
+                return clienteDoc.slice(0, sliceLength) === contaDoc.slice(0, sliceLength);
+            });
+
 
                 setCliente({
                     ...foundCliente,
                     dataNascimento: new Date(foundCliente.dataNascimento)
                 });
                 setContas(clienteContas);
-                setAgencia(agenciasData.find(a => a.codigo === foundCliente.codigoAgencia) || null);
+
+                const clienteCodigoAgencia = String(foundCliente.codigoAgencia).trim();
+                const agenciaEncontrada = agenciasData.find(a => 
+                    String(a.codigo).trim() === clienteCodigoAgencia
+                );
+
+                setAgencia(agenciaEncontrada || null);
+
 
             } catch (err) {
                 console.error("Erro ao carregar dados:", err);
@@ -209,7 +223,7 @@ export default function ClienteDetail() {
     );
 }
 
-// Componentes auxiliares (mantidos exatamente como estavam)
+// Componentes auxiliares
 function InfoItem({ label, value }: { label: string; value: string }) {
     return (
         <div className="info-item">

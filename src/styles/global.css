@@ -1,28 +1,40 @@
-/* Regra geral para todo o projeto */
+
+:root {
+    --primary-color: #003366;
+    --secondary-color: #4da6ff;
+    --background-light: #f8fafc;
+    --background-dark: #1a202c;
+    --text-primary: #2d3748;
+    --text-secondary: #718096;
+    --card-bg: #ffffff;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
 body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    /* Peso regular para textos normais */
+
 }
 
-/* Títulos */
+
 h1,
 h2,
 h3 {
     font-weight: 700;
-    /* Mais negrito para títulos */
+   
 }
 
-/* Textos em destaque */
+
 .destaque {
     font-weight: 200;
 }
 
-/* Botões */
+
 button {
     font-weight: 500;
     letter-spacing: 0.5px;
-    /* Melhora a legibilidade */
+   
 }
 
 
@@ -37,7 +49,7 @@ button {
     padding: 20px;
 }
 
-/* Estilos para as seções */
+
 .cliente-header,
 .cliente-info-section,
 .contas-section,
@@ -45,7 +57,7 @@ button {
     margin-bottom: 30px;
 }
 
-/* Estilos para grids e cards */
+
 .info-grid,
 .contas-grid {
     display: grid;
@@ -81,14 +93,14 @@ button {
     width: 100%;
 }
 
-/* No seu global.css */
+
 @media (max-width: 768px) {
     .main-content {
         padding: 1rem;
     }
 }
 
-/* Estilos gerais para listagens */
+
 .contas-list-container,
 .agencias-list-container {
     max-width: 1200px;
@@ -100,7 +112,7 @@ button {
     margin: 20px 0;
 }
 
-/* Grid de contas e agências */
+
 .contas-grid,
 .agencias-grid {
     display: grid;
@@ -154,7 +166,7 @@ button {
     justify-content: center;
 }
 
-/* Responsividade */
+
 @media (max-width: 768px) {
 
     .contas-list-container,
@@ -168,7 +180,7 @@ button {
     }
 }
 
-/* Estilos para as páginas de detalhe */
+
 .conta-detail-container,
 .agencia-detail-container {
     max-width: 800px;
@@ -247,3 +259,25 @@ button {
         grid-template-columns: 1fr;
     }
 }
+
+
+.card-hover-effect {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover-effect:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #004080 100%);
+}
+
+.neuromorphism-card {
+    border-radius: 15px;
+    background: #f0f4f8;
+    box-shadow: 8px 8px 16px #d9dde0,
+        -8px -8px 16px #ffffff;
+}
+

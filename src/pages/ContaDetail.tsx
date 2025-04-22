@@ -20,7 +20,7 @@ export default function ContaDetail() {
                 setLoading(true);
                 setError(null);
                 
-                // Busca todas as contas (já que não temos fetchConta específico)
+                // Busca todas as contas 
                 const contas = await fetchContas();
                 const contaEncontrada = contas.find(c => c.id === id);
                 
